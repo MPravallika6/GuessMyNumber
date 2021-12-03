@@ -18,12 +18,12 @@ public class GuessingGameMaddelavedu {
 
     public static void main(String[] args) {
         // TODO: change computerNumber to secretNumber Hint: Right-click / Refactor / Rename
-        int computerNumber = (int) (Math.random() * 100 + 1);
+        int hiddenNumber = (int) (Math.random() * 100 + 1);
         int userAnswer = 0;
-        System.out.println("The correct guess would be " + computerNumber);
+        System.out.println("The correct guess would be " + hiddenNumber);
         int count = 1;
 
-        while (userAnswer != computerNumber) {
+        while (userAnswer != hiddenNumber) {
             // TODO: create 3 local variables for the arguments so we know what they mean
             // showInputDialog - the first argument is always null (no parent)
             // message = "Enter a guess between 1 and 100" // what type?
@@ -34,13 +34,13 @@ public class GuessingGameMaddelavedu {
                     "Enter a guess between 1 and 100", "Guessing Game", 3);
             userAnswer = Integer.parseInt(response);
 
-            JOptionPane.showMessageDialog(null, "" + determineGuess(userAnswer, computerNumber, count));
+            JOptionPane.showMessageDialog(null, "" + calculatetheGuess(userAnswer, hiddenNumber, count));
             count++;
         }
     }
 
     // TODO: Refactor / Rename determineGuess to calculateMessage
-    public static String determineGuess(int userAnswer, int computerNumber, int count) {
+    public static String calculatetheGuess(int userAnswer, int computerNumber, int count) {
         // TODO: Instead of "Try Number" which sounds like we should try that as a guess...
         // Say "You've used " + count + guesses.
         // If count is one, use "guess", else use "guesses" HINT: Ternary operator
